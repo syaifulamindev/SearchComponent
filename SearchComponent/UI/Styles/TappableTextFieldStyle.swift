@@ -27,8 +27,7 @@ struct TappableTextFieldStyle: TextFieldStyle {
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .fill(backgroundColor)
             )
-            .multilineTextAlignment(.leading)
-            .tint(foregroundColor)
+            .textFieldCursor(foregroundColor)
             .foregroundColor(foregroundColor)
             .focused($textFieldFocused)
             .onTapGesture {
