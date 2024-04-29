@@ -10,6 +10,7 @@
 		6E10B7C62BDF5658005125CC /* TappableTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7C52BDF5658005125CC /* TappableTextFieldStyle.swift */; };
 		6E10B7C92BDFCF40005125CC /* Textfield + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7C82BDFCF40005125CC /* Textfield + Extension.swift */; };
 		6E10B7CC2BDFD0CB005125CC /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 6E10B7CB2BDFD0CB005125CC /* SwiftUIIntrospect */; };
+		6E10B7D02BE034BA005125CC /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7CF2BE034BA005125CC /* SearchData.swift */; };
 		6EFA2CDB2BDEFF0E003DDA68 /* SearchComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDA2BDEFF0E003DDA68 /* SearchComponentApp.swift */; };
 		6EFA2CDD2BDEFF0E003DDA68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDC2BDEFF0E003DDA68 /* ContentView.swift */; };
 		6EFA2CDF2BDEFF10003DDA68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDE2BDEFF10003DDA68 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		6E10B7C52BDF5658005125CC /* TappableTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableTextFieldStyle.swift; sourceTree = "<group>"; };
 		6E10B7C82BDFCF40005125CC /* Textfield + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Textfield + Extension.swift"; sourceTree = "<group>"; };
+		6E10B7CF2BE034BA005125CC /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		6EFA2CD72BDEFF0E003DDA68 /* SearchComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EFA2CDA2BDEFF0E003DDA68 /* SearchComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponentApp.swift; sourceTree = "<group>"; };
 		6EFA2CDC2BDEFF0E003DDA68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				6EFA2CE92BDF01FA003DDA68 /* SearchView.swift */,
+				6E10B7CF2BE034BA005125CC /* SearchData.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				6EFA2CDD2BDEFF0E003DDA68 /* ContentView.swift in Sources */,
 				6E10B7C92BDFCF40005125CC /* Textfield + Extension.swift in Sources */,
+				6E10B7D02BE034BA005125CC /* SearchData.swift in Sources */,
 				6E10B7C62BDF5658005125CC /* TappableTextFieldStyle.swift in Sources */,
 				6EFA2CEC2BDF4E38003DDA68 /* Color + Extension.swift in Sources */,
 				6EFA2CEA2BDF01FA003DDA68 /* SearchView.swift in Sources */,
