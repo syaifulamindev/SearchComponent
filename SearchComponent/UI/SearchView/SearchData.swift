@@ -4,17 +4,19 @@
 //
 //  Created by saminos on 30/04/24.
 //
+import Foundation
 
 struct SearchData: Equatable, ExpressibleByStringInterpolation {
     
     var glob: String = "glob" {
         didSet {
-            text = "text: \(glob)"
+            print(readCategory())
         }
-        
-        
     }
-    var text: String = ""
+    
+    private let categoryPrefix = "@"
+    
+    var category: String = ""
     
     init(glob: String) {
         self.glob = glob
@@ -26,5 +28,47 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
     
     init(stringLiteral value: String) {
         self.init(glob: value)
+//        self.glob = value
+    }
+    
+    func removeWrongComponentsSplit(categories: inout [String]) {
+        if categories.first?.first == "@" {
+            categories.removeFirst()
+        } else if glob.first != "@" {
+            categories.removeFirst()
+        }
+    }
+    
+    func firstComponentRange(before lastIndex: String.Index? = nil) -> ClosedRange<String.Index> {
+        glob.index(after:glob.startIndex)...glob.index(before: lastIndex ?? glob.endIndex)
+    }
+    
+    func globContainAtAndMoreThanOneChar() -> Bool {
+        glob.first == "@" && glob.count > 1
+    }
+    
+    func newCategoryRange() -> ClosedRange<String.Index> {
+        let firstSpaceIndex = glob.firstIndex(of: " ")
+        guard let firstSpaceIndex else { return firstComponentRange() }
+        
+        let firstSpaceDistance = glob.distance(from: glob.startIndex, to: firstSpaceIndex)
+        if firstSpaceDistance > 1 {
+            return firstComponentRange(before: firstSpaceIndex)
+        }
+        return firstComponentRange()
+    }
+    
+    func readCategory() -> [String] {
+        var categories = glob.components(separatedBy: " @")
+        removeWrongComponentsSplit(categories: &categories)
+        guard globContainAtAndMoreThanOneChar() else { return categories }
+        
+        let newCategory = String(
+            glob[newCategoryRange()]
+        )
+        
+        categories.insert(newCategory, at: 0)
+        
+        return categories
     }
 }
