@@ -58,6 +58,15 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
         return firstComponentRange()
     }
     
+    func removeEmptyCategories(_ categories: inout [String]) {
+        categories = categories.compactMap { category in
+            if category == "" || category == " " {
+                return nil
+            }
+            return category
+        }
+    }
+    
     func readCategory() -> [String] {
         var categories = glob.components(separatedBy: " @")
         removeWrongComponentsSplit(categories: &categories)
@@ -68,7 +77,7 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
         )
         
         categories.insert(newCategory, at: 0)
-        
+        removeEmptyCategories(&categories)
         return categories
     }
 }
