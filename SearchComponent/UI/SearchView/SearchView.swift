@@ -10,14 +10,12 @@ import SwiftUI
 struct SearchView: View {
     @Binding var textFieldInput: String
     @State var textFieldTitle: String = ""
+    var backgroundColor: Color = .white
     var body: some View {
-        TextField(textFieldTitle, text: $textFieldInput)
-            .background(
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(.white)
-            )
-            .foregroundColor(.black)
-            .frame(height: 38)
+        VStack (spacing: 0) {
+            TextField(textFieldTitle, text: $textFieldInput)
+                .textFieldStyle(TappableTextFieldStyle(backgroundColor: backgroundColor))
+        }
     }
 }
 
