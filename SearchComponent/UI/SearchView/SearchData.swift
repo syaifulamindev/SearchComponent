@@ -68,11 +68,24 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
         return firstComponentRange()
     }
     
-    func removeEmptyCategories(_ categories: inout [String]) {
+    func returnNilIfCategoryEmpty(_ category: String) -> String? {
+        if category == "" || category == " " {
+            return nil
+        }
+        return category
+    }
+    
+    func removeStringAfterSpaces(_ category: inout String?) {
+        guard var _category = category else { return }
+        guard let spaceIndex = _category.firstIndex(of: " ") else { return }
+        let rangeBeforeSpace = _category.startIndex..._category.index(before: spaceIndex)
+        category = String(_category[rangeBeforeSpace])
+    }
+    
+    func fixCategories(_ categories: inout [String]) {
         categories = categories.compactMap { category in
-            if category == "" || category == " " {
-                return nil
-            }
+            var category = returnNilIfCategoryEmpty(category)
+            removeStringAfterSpaces(&category)
             return category
         }
     }
@@ -87,7 +100,7 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
         )
         
         categories.insert(newCategory, at: 0)
-        removeEmptyCategories(&categories)
+        fixCategories(&categories)
         return categories
     }
     
