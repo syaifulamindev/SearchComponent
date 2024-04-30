@@ -10,20 +10,25 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
     
     var glob: String = "glob" {
         didSet {
-            print(readCategory())
+            let categories = readCategory()
+            if categories.count > 0 {
+                type = .category(categories)
+            } else if glob.count != 0 {
+                type = .title(glob)
+            } else {
+                type = .none
+            }
         }
     }
     
     private let categoryPrefix = "@"
     
-    var category: String = ""
+    
+    var type: SearchType = .none
+    
     
     init(glob: String) {
         self.glob = glob
-    }
-    
-    static func ==(a: SearchData, b: SearchData) -> Bool {
-        a.glob == b.glob
     }
     
     init(stringLiteral value: String) {
@@ -31,6 +36,11 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
 //        self.glob = value
     }
     
+    static func ==(a: SearchData, b: SearchData) -> Bool {
+        a.glob == b.glob
+    }
+    
+    // MARK: read category
     func removeWrongComponentsSplit(categories: inout [String]) {
         if categories.first?.first == "@" {
             categories.removeFirst()
@@ -79,5 +89,14 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
         categories.insert(newCategory, at: 0)
         removeEmptyCategories(&categories)
         return categories
+    }
+    
+}
+
+extension SearchData {
+    enum SearchType {
+        case none
+        case category([String])
+        case title(String)
     }
 }
