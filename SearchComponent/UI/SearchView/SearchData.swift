@@ -76,8 +76,13 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
     }
     
     func removeStringAfterSpaces(_ category: inout String?) {
-        guard var _category = category else { return }
+        guard let _category = category else { return }
         guard let spaceIndex = _category.firstIndex(of: " ") else { return }
+        guard _category.distance(from: _category.startIndex, to: spaceIndex) > 0 else {
+            category = nil
+            return
+        }
+
         let rangeBeforeSpace = _category.startIndex..._category.index(before: spaceIndex)
         category = String(_category[rangeBeforeSpace])
     }

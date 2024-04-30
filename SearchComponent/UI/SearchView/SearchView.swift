@@ -12,12 +12,26 @@ struct SearchView: View {
     @Binding var textFieldInput: String
     @State var textFieldTitle: String = "Search something.."
     @State var search: SearchData = "search data"
+    
 
     var body: some View {
         VStack (spacing: 0) {
             TextField(textFieldTitle, text: $search.glob)
                 .textFieldStyle(TappableTextFieldStyle())
         }
+        .overlay(
+            VStack {
+                if case .category(let categories) = search.type {
+                    Spacer(minLength:  56)
+                    ResultListView(
+                        items: categories.map { ResultItemData.init(value: $0) }
+                    ).background(Color.blue)
+                }
+            }
+                ,
+            alignment: .topLeading
+        )
+        
     }
 }
 

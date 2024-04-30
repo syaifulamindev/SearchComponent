@@ -10,9 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            SearchView(textFieldInput: .constant("tes"))
+            SearchView(textFieldInput: .constant(""))
                 .padding(8)
+            Spacer(minLength: 300)
         }
+        .frame(width: 400)
         .background(.gray)
     }
 }
