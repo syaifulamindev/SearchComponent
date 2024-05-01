@@ -23,9 +23,10 @@ struct SearchView: View {
             VStack {
                 if case .category(let categories) = search.type {
                     Spacer(minLength:  56)
-                    ResultListView(
-                        items: categories.map { ResultItemData.init(value: $0) }
-                    ).background(Color.blue)
+                    SearchSuggestionListView(
+                        data: SearchSuggestionListData(categories)//,
+//                        focusedItem: .constant(items.first)
+                    )
                 }
             }
                 ,

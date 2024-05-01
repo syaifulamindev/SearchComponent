@@ -16,6 +16,9 @@ struct ContentView: View {
         }
         .frame(width: 400)
         .background(.gray)
+        .onAppear {
+            print(MovieList.createExample())
+        }
     }
 }
 
