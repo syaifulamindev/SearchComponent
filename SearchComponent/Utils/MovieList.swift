@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct MovieList: Codable {
     let categories: [MovieList.Category]
@@ -16,6 +17,7 @@ extension MovieList {
     struct Category: Codable {
         let id: Int
         let name: String
+        var color: Color = .random
     }
 
     struct Title: Codable {

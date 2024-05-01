@@ -19,6 +19,7 @@
 		6E72DCBB2BE295CE006E74C0 /* SearchSuggestionItemButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E72DCBA2BE295CE006E74C0 /* SearchSuggestionItemButtonStyle.swift */; };
 		6E72DCBD2BE29736006E74C0 /* NSTableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E72DCBC2BE29736006E74C0 /* NSTableView + Extension.swift */; };
 		6E72DCC02BE2B282006E74C0 /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E72DCBF2BE2B282006E74C0 /* Keycode.swift */; };
+		6E72DCC52BE2DB40006E74C0 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E72DCC42BE2DB40006E74C0 /* Color+Codable.swift */; };
 		6EFA2CDB2BDEFF0E003DDA68 /* SearchComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDA2BDEFF0E003DDA68 /* SearchComponentApp.swift */; };
 		6EFA2CDD2BDEFF0E003DDA68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDC2BDEFF0E003DDA68 /* ContentView.swift */; };
 		6EFA2CDF2BDEFF10003DDA68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDE2BDEFF10003DDA68 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		6E72DCBA2BE295CE006E74C0 /* SearchSuggestionItemButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionItemButtonStyle.swift; sourceTree = "<group>"; };
 		6E72DCBC2BE29736006E74C0 /* NSTableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView + Extension.swift"; sourceTree = "<group>"; };
 		6E72DCBF2BE2B282006E74C0 /* Keycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
+		6E72DCC42BE2DB40006E74C0 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		6EFA2CD72BDEFF0E003DDA68 /* SearchComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EFA2CDA2BDEFF0E003DDA68 /* SearchComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponentApp.swift; sourceTree = "<group>"; };
 		6EFA2CDC2BDEFF0E003DDA68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				6EFA2CEB2BDF4E38003DDA68 /* Color + Extension.swift */,
+				6E72DCC42BE2DB40006E74C0 /* Color+Codable.swift */,
 				6E10B7C82BDFCF40005125CC /* Textfield + Extension.swift */,
 				6E72DCBC2BE29736006E74C0 /* NSTableView + Extension.swift */,
 			);
@@ -236,6 +239,7 @@
 			files = (
 				6EFA2CDD2BDEFF0E003DDA68 /* ContentView.swift in Sources */,
 				6E10B7C92BDFCF40005125CC /* Textfield + Extension.swift in Sources */,
+				6E72DCC52BE2DB40006E74C0 /* Color+Codable.swift in Sources */,
 				6E72DCC02BE2B282006E74C0 /* Keycode.swift in Sources */,
 				6E10B7D02BE034BA005125CC /* SearchData.swift in Sources */,
 				6E10B7C62BDF5658005125CC /* TappableTextFieldStyle.swift in Sources */,
