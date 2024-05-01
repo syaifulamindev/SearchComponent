@@ -14,6 +14,7 @@
 		6E10B7D32BE0E36F005125CC /* ResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7D22BE0E36F005125CC /* ResultListView.swift */; };
 		6E10B7D52BE1079C005125CC /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7D42BE1079C005125CC /* ResultItemView.swift */; };
 		6E10B7D72BE1092A005125CC /* ResultItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7D62BE1092A005125CC /* ResultItemData.swift */; };
+		6E10B7DE2BE12C84005125CC /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10B7DD2BE12C84005125CC /* MovieList.swift */; };
 		6EFA2CDB2BDEFF0E003DDA68 /* SearchComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDA2BDEFF0E003DDA68 /* SearchComponentApp.swift */; };
 		6EFA2CDD2BDEFF0E003DDA68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDC2BDEFF0E003DDA68 /* ContentView.swift */; };
 		6EFA2CDF2BDEFF10003DDA68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EFA2CDE2BDEFF10003DDA68 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		6E10B7D22BE0E36F005125CC /* ResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListView.swift; sourceTree = "<group>"; };
 		6E10B7D42BE1079C005125CC /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
 		6E10B7D62BE1092A005125CC /* ResultItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemData.swift; sourceTree = "<group>"; };
+		6E10B7DD2BE12C84005125CC /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		6EFA2CD72BDEFF0E003DDA68 /* SearchComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EFA2CDA2BDEFF0E003DDA68 /* SearchComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponentApp.swift; sourceTree = "<group>"; };
 		6EFA2CDC2BDEFF0E003DDA68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		6E10B7CE2BDFD4BA005125CC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6E10B7DD2BE12C84005125CC /* MovieList.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				6E10B7D02BE034BA005125CC /* SearchData.swift in Sources */,
 				6E10B7C62BDF5658005125CC /* TappableTextFieldStyle.swift in Sources */,
 				6EFA2CEC2BDF4E38003DDA68 /* Color + Extension.swift in Sources */,
+				6E10B7DE2BE12C84005125CC /* MovieList.swift in Sources */,
 				6E10B7D72BE1092A005125CC /* ResultItemData.swift in Sources */,
 				6E10B7D52BE1079C005125CC /* ResultItemView.swift in Sources */,
 				6E10B7D32BE0E36F005125CC /* ResultListView.swift in Sources */,
