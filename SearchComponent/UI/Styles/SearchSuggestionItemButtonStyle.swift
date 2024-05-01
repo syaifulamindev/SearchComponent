@@ -16,10 +16,10 @@ struct SearchSuggestionItemButtonStyle: ButtonStyle {
                 .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
                 
                 .font(.system(size: 14))
-                .foregroundColor(isFocused ? .gray : .black)
+                .foregroundColor(isFocused ? .white : .black)
             Spacer()
         }
-        .background(isFocused ? .yellow : .white)
+        .background(isFocused ? .blue : .white)
     }
 }
 
