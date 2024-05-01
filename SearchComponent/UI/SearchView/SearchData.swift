@@ -12,11 +12,11 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
         didSet {
             let categories = readCategory()
             if categories.count > 0 {
-                type = .category(categories)
+                value = .category(SearchSuggestionListData(categories))
             } else if glob.count != 0 {
-                type = .title(glob)
+                value = .title(glob)
             } else {
-                type = .none
+                value = .none
             }
         }
     }
@@ -24,7 +24,7 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
     private let categoryPrefix = "@"
     
     
-    var type: SearchType = .none
+    var value: SearchValue = .none
     
     
     init(glob: String) {
@@ -112,9 +112,9 @@ struct SearchData: Equatable, ExpressibleByStringInterpolation {
 }
 
 extension SearchData {
-    enum SearchType {
+    enum SearchValue: Equatable {
         case none
-        case category([String])
+        case category(SearchSuggestionListData)
         case title(String)
     }
 }

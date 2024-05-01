@@ -8,28 +8,18 @@
 import SwiftUI
 
 struct SearchSuggestionListView: View {
-    var data: SearchSuggestionListData
-    
-    init(data: SearchSuggestionListData) {
-        self.data = data
-//        self.focusedItemSelection = .constant(items.first)
-    }
-//    var onItemSelected: ((_ item: SearchSuggestionData) -> Void)? = { item in
-//        print(item)
-//        focusedItem = item
-//    }()
+    @Binding var data: SearchSuggestionListData
     
     func onItemSelected(_ item: SearchSuggestionData) {
         focusedItem = item
     }
     
-    @State private var focusedItem: SearchSuggestionData?
-    @State private var lastFocusedItem: SearchSuggestionData?
+    @Binding var focusedItem: SearchSuggestionData?
     
     func isFocused(_ item: SearchSuggestionData) -> Bool {
-        guard let lastFocusedItem else { return false }
-        print("\nisFocused: \(lastFocusedItem)\nitem: \(item)isFocused: \(lastFocusedItem == item)\n")
-        return lastFocusedItem.index == item.index
+        guard let focusedItem else { return false }
+        print("\nisFocused: \(focusedItem)\nitem: \(item)isFocused: \(focusedItem == item)\n")
+        return focusedItem.index == item.index
     }
     
     var body: some View {
@@ -43,19 +33,17 @@ struct SearchSuggestionListView: View {
                 
 
             }
-            .onChange(of: focusedItem) { newValue in
-                guard let newValue else { return }
-                lastFocusedItem = focusedItem
-            }
-            .onAppear {
-                focusedItem = data.list.first
-            }
             .padding(EdgeInsets(top: -gp.safeAreaInsets.top, leading: -16, bottom: 0, trailing: -16))
             .background(Color.white)
             .cornerRadius(5)
             .frame(minHeight: 300)
+            
+        }
+        .onAppear {
+            focusedItem = data.list.first
         }
     }
+    
 }
 
 struct ResultListView_Previews: PreviewProvider {
@@ -63,7 +51,8 @@ struct ResultListView_Previews: PreviewProvider {
     static var previews: some View {
         
         SearchSuggestionListView(
-            data:SearchSuggestionListData(["One", "Two", "Three"])
+            data: .constant(SearchSuggestionListData(["One", "Two", "Three"])),
+            focusedItem: .constant(nil)
         )
     }
 }
