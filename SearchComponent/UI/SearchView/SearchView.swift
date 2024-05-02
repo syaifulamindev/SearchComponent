@@ -17,8 +17,8 @@ import AppKit
 struct SearchView: View {
     
     @Binding var textFieldInput: String
-    @State var textFieldTitle: String = "Search something.."
-    @State var search: SearchData = "Search Something"
+    @State var textFieldTitle: String = "What’s your focus?"
+    @State var search: SearchData = ""
     @State private var keyMonitor: Any?
     
 //    @FocusState var focus: FocusField?
@@ -29,7 +29,6 @@ struct SearchView: View {
     var body: some View {
         VStack (spacing: 0) {
             TextField(textFieldTitle, text: $search.glob)
-//                .focused($focus, equals: .search)
                 .textFieldStyle(TappableTextFieldStyle())
                 
         }

@@ -17,7 +17,7 @@ extension MovieList {
     struct Category: Codable {
         let id: Int
         let name: String
-        var color: Color = .random
+        var color: Color? = .random
     }
 
     struct Title: Codable {

@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            DropdownButton(action: {}, label: {Text("Category Dropdown")})
             SearchView(textFieldInput: .constant(""))
-                .padding(8)
             Spacer(minLength: 300)
         }
+        .padding()
         .frame(width: 400)
         .background(.gray)
         .onAppear {
